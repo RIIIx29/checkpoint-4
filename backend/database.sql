@@ -26,18 +26,36 @@ SET time_zone = "+00:00";
 -- Structure de la table `item`
 --
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+CREATE TABLE user (
+  id INT(11) UNSIGNED NOT NULL,
+  userName VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE
+  password VARCHAR(255) NOT NULL,
+  resetCode VARCHAR(255) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `item`
+-- Contenu de la table Projets
 --
+CREATE TABLE
+  project (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    desc TEXT NOT NULL,
+  type ENUM("REALISATIONS", "PROJETS") NOT NULL,
+    date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  );
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+
+CREATE TABLE
+  image (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    imgLink VARCHAR(255) NOT NULL,
+    alt TINYTEXT NOT NULL,
+    date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    project_id INT NULL,
+    CONSTRAINT fk_image_project FOREIGN KEY (project_id) REFERENCES project(id) ON DELETE CASCADE
+  );
 
 --
 -- Index pour les tables exportées
@@ -46,7 +64,7 @@ INSERT INTO `item` (`id`, `title`) VALUES
 --
 -- Index pour la table `item`
 --
-ALTER TABLE `item`
+ALTER TABLE project
   ADD PRIMARY KEY (`id`);
 
 --
@@ -56,7 +74,7 @@ ALTER TABLE `item`
 --
 -- AUTO_INCREMENT pour la table `item`
 --
-ALTER TABLE `item`
+ALTER TABLE project
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
