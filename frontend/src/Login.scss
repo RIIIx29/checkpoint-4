@@ -1,0 +1,235 @@
+$bgColor: #f6f6f6;
+$secondaryColor: #fbfbfb;
+$tiercaryColor: #f1f1f1;
+
+$mainFontColor: #8d8d8d;
+$secondaryFontColor: #606060;
+
+$cptsPink: #ff00a8;
+$cptsYellow: #f8e57c;
+$cptsOrange: #efad65;
+$cptsGreen: #68d065;
+$cptsBlue: #66bad9;
+
+$mainBoxShadow: 0px 0px 10px 1px rgba(163, 163, 163, 0.25);
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: $bgColor;
+  background-image: url("src/assets/images/fond2Hexa.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 107em;
+  background-attachment: fixed;
+
+  .loginHeader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 115px;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    h1 {
+      position: absolute;
+      left: 50%;
+      top: 200%;
+      transform: translateX(-50%);
+      width: auto;
+      color: $cptsPink;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: none;
+
+  p {
+    color: $mainFontColor;
+  }
+
+  .loginDisplay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+    width: 95%;
+    height: auto;
+    border-radius: 10px;
+    background-color: $secondaryColor;
+    box-shadow: $mainBoxShadow;
+
+    .stylingBar {
+      background-color: #32a1bf;
+      height: 2px;
+      width: 80%;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+      .input {
+        padding: 8px 12px;
+        margin: 12px;
+        width: 60%;
+        height: 3em;
+        border: none;
+        border-radius: 10px;
+        background-color: $tiercaryColor;
+
+        &:focus {
+          outline: solid 1px rgb(206, 206, 206);
+        }
+      }
+
+      .submitButton {
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #8bb9cc;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 10px;
+        color: #ffffff;
+        font-weight: 700;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #66c6f0;
+        }
+      }
+    }
+
+    .secondaryOptions {
+      margin-top: 24px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .remember {
+        color: $mainFontColor;
+        font-size: 1rem;
+        width: 45%;
+
+        input {
+          margin-right: 8px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      p {
+        color: $secondaryFontColor;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .reset-password {
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 0;
+        background: none;
+        border: none;
+        width: 45%;
+        height: 15%;
+        font-size: 1rem;
+      }
+    }
+
+    .registerButton {
+      display: flex;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      background: none;
+      color: $cptsPink;
+      border: none;
+    }
+
+    .homeButton {
+      // margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 20%;
+    }
+
+    h1 {
+      margin: 24px;
+      font-size: 1.8em;
+      color: $secondaryFontColor;
+    }
+
+    a {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 55px;
+      text-decoration: none;
+      background-color: #f2f2f2;
+      color: $mainFontColor;
+      border-bottom: 1px solid #e6e6e6;
+      border-radius: 0 0 10px 10px;
+
+      &:hover {
+        background-color: $secondaryColor;
+        color: $secondaryFontColor;
+      }
+    }
+
+    .navBottom {
+      bottom: 0px;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    .loginDisplay {
+      width: 50%;
+      max-width: 580px;
+    }
+  }
+}
