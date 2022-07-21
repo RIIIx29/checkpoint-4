@@ -14,21 +14,8 @@ router.post("/login", AuthController.login);
 router.get("/logout", AuthController.logout);
 
 //  User CRUD routes
-router.get(
-  "/",
-  AuthController.isUserConnected,
-  AuthController.isUserAuthorized,
-  AuthController.isUserAdmin,
-  UserController.browse
-);
-router.get("/orgtree", UserController.getOrgTree);
-router.get(
-  "/:id",
-  AuthController.isUserConnected,
-  AuthController.isUserAuthorized,
-  AuthController.isUserAllowedToGet,
-  UserController.read
-);
+router.get("/", UserController.browse);
+
 router.put(
   //  This route accepts a query parameter available only to admins, it is used to authorize or de-authorize a user: ?authorize=0 or 1
   "/:id",

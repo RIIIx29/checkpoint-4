@@ -14,7 +14,6 @@ router.get(
   AuthController.canGetProjectDocument,
   ProjectController.readById
 );
-router.get("/mission/:id", ProjectController.readByMission);
 
 router.post(
   "/",

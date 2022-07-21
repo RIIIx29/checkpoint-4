@@ -18,12 +18,8 @@ const migrate = async () => {
   await connection.query(`use ${DB_NAME}`);
 
   const sql = fs.readFileSync("./database.sql", "utf8");
-  const testUsers = fs.readFileSync("./testUsers.sql", "utf8");
-  const testProject = fs.readFileSync("./testProject.sql", "utf-8");
 
   await connection.query(sql);
-  await connection.query(testUsers);
-  await connection.query(testProject);
 
   connection.end();
 };

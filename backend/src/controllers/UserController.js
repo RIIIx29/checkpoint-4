@@ -13,19 +13,8 @@ const deleteImage = (pathImage) => {
 class UserController {
   //  Fetches the whole user list, only available to admins and super-admins. Admins can't read RPPS and Adeli numbers
   static browse = (req, res) => {
-    if (req.query.inactive === "1") {
-      return models.user
-        .findAllInactive(req.userRole)
-        .then(([rows]) => {
-          res.send(rows);
-        })
-        .catch((err) => {
-          console.error(err);
-          res.sendStatus(500);
-        });
-    }
     return models.user
-      .findAll(req.userRole)
+      .findAll()
       .then(([rows]) => {
         res.send(rows);
       })

@@ -7,9 +7,7 @@ class ProjectManager extends AbstractManager {
   static table = "project";
 
   findAll() {
-    return this.connection.query(
-      `SELECT p.id, p.title, p.text, p.mission_id, p.date, m.name mission_name FROM  ${ProjectManager.table} p LEFT JOIN mission m ON p.mission_id = m.id`
-    );
+    return this.connection.query(`SELECT * FROM  ${ProjectManager.table}`);
   }
 
   findById(projectId) {

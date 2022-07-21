@@ -146,45 +146,8 @@ class UserManager extends AbstractManager {
     return false;
   }
 
-  findAll(userRole) {
-    if (userRole === "SUPER_ADMIN") {
-      return this.connection.query(`SELECT id,
-      email,
-      profession,
-      lastname,
-      firstname,
-      address,
-      phone,
-      messaging,
-      messagingName,
-      status,
-      assosStatus,
-      rpps,
-      adeli,
-      imgLink,
-      paymentMethod,
-      role,
-      authorized,
-      registerDate FROM ${this.table} WHERE authorized = 1`);
-    }
-    return this.connection.query(
-      `SELECT id,
-  email,
-  profession,
-  lastname,
-  firstname,
-  address,
-  phone,
-  messaging,
-  messagingName,
-  status,
-  assosStatus,
-  paymentMethod,
-  role,
-  imgLink,
-  authorized,
-  registerDate FROM ${this.table} WHERE authorized = 1`
-    );
+  findAll() {
+    return this.connection.query(`SELECT * FROM ${this.table}`);
   }
 
   findAllInactive(userRole) {
