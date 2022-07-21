@@ -2,11 +2,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import { useReducer, useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "@services/axios";
-import UserContext from "../UserContext";
+import UserContext from "./contexts/UserContext";
 import { schemaForLogin } from "../JoiSchemas";
-import "../src/Login.scss";
+import "../Login.scss";
 
 const formInitialState = {
   password: "",
@@ -64,7 +64,7 @@ function Login() {
     <div className="loginPage">
       <div className="container">
         <section className="loginDisplay">
-          <h1>Connectez-vous ici</h1>
+          <h1>Connect here</h1>
           <span className="stylingBar" />
           <form onSubmit={loginSubmit}>
             <input
@@ -81,7 +81,7 @@ function Login() {
             <input
               className="input"
               type="password"
-              placeholder="Entrez votre mot de passe"
+              placeholder="Enter password"
               required
               autoComplete="on"
               value={formData.password}

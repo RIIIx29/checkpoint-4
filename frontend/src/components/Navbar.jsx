@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork, CgFileDocument } from "react-icons/cg";
+import { RiAdminFill } from "react-icons/ri";
 import {
   AiFillStar,
   AiOutlineHome,
@@ -101,7 +102,7 @@ function NavBar() {
                 to="/Login"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Login
+                <RiAdminFill style={{ marginBottom: "2px" }} /> Login
               </Nav.Link>
             </Nav.Item>
           </Nav>

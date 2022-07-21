@@ -11,6 +11,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
+import Admin from "./components/Admin/Admin";
 import Resume from "./components/Resume/ResumeNew";
 import Login from "./components/Login";
 import ScrollToTop from "./components/ScrollToTop";
@@ -20,6 +21,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [user, setUser] = useState();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,6 +44,10 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/Login" element={<Login />} />
           <Route path="*" element={<Navigate to="/" />} />
+          {!user && <Route path="/login" element={<Login />} />}
+          {(user && user?.role === "ADMIN")(
+            <Route path="/admin" element={<Admin />} />
+          )}
         </Routes>
         <Footer />
       </div>

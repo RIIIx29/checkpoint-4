@@ -1,0 +1,314 @@
+$bgColor: #f6f6f6;
+$secondaryColor: #fbfbfb;
+$tiercaryColor: #f1f1f1;
+
+$mainFontColor: #8d8d8d;
+$secondaryFontColor: #606060;
+
+$cptsPink: #ff00a8;
+$cptsYellow: #f8e57c;
+$cptsOrange: #efad65;
+$cptsGreen: #68d065;
+$cptsBlue: #66bad9;
+
+$mainBoxShadow: 0px 0px 10px 1px rgba(163, 163, 163, 0.25);
+
+.adminPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-width: 960px;
+  height: 100vh;
+  min-height: 830px;
+  position: relative;
+  background-color: $bgColor;
+  background-image: url("src/assets/images/fond2Hexa.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 107em;
+  background-attachment: fixed;
+
+  .adminHeader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5em;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    h1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      color: $cptsPink;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+
+  .container {
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 92%;
+    background: none;
+
+    p {
+      color: $mainFontColor;
+    }
+
+    .adminBoard {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 15px;
+      width: auto;
+      height: 95%;
+      border-radius: 10px;
+      background-color: $secondaryColor;
+      box-shadow: $mainBoxShadow;
+
+      .adminNav {
+        position: relative;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        min-width: 300px;
+        max-width: 300px;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+        background-color: #ededed;
+        box-shadow: 4px 0px 10px rgba(163, 163, 163, 0.25);
+
+        .welcomeUser {
+          font-weight: 600;
+          padding: 14px 0 32px 0;
+          color: $secondaryFontColor;
+          text-align: center;
+
+          .textPink,
+          .textOrange {
+            font-weight: 600;
+          }
+        }
+
+        a {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: flex-start;
+          padding-left: 15%;
+          align-items: center;
+          width: 100%;
+          height: 55px;
+          text-decoration: none;
+          background-color: #f2f2f2;
+          color: $mainFontColor;
+          border-bottom: 1px solid #e6e6e6;
+          transition: 150ms;
+
+          &:hover {
+            background-color: $secondaryColor;
+            color: $secondaryFontColor;
+          }
+        }
+
+        .navMid1 {
+          margin-top: 55px;
+          border-radius: 0 0 0 4px;
+        }
+
+        .navMid2 {
+          border-radius: 0 0 0 4px;
+        }
+
+        .navBottom {
+          position: absolute;
+          bottom: 0px;
+          border-radius: 0 0 0 4px;
+
+          &:hover {
+            color: $cptsPink;
+          }
+        }
+
+        .navActive {
+          background-color: $secondaryColor;
+          color: $secondaryFontColor;
+
+          p {
+            color: $secondaryFontColor;
+          }
+        }
+      }
+
+      .bgContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        min-width: 70vw;
+        height: 100%;
+        padding: 2%;
+
+        .adminTab {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          max-width: 1400px;
+          width: 100%;
+          height: 100%;
+          background: #f8f8f8;
+          box-shadow: $mainBoxShadow;
+          border-radius: 5px;
+          padding: 8px;
+
+          &.users {
+            flex-direction: row;
+          }
+        }
+      }
+    }
+
+    .userInfo {
+      height: 100%;
+      width: 35%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .container {
+        position: absolute;
+        bottom: 0;
+        background-color: $tiercaryColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 4px;
+        padding: 12px;
+
+        .header {
+          padding: 8px;
+          width: 95%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          button {
+            border: none;
+            filter: saturate(50%);
+            transition: 150ms;
+
+            &:hover {
+              cursor: pointer;
+              filter: saturate(100%);
+            }
+          }
+        }
+
+        .content {
+          margin: 10px 6px;
+          padding: 8px;
+          background-color: $secondaryColor;
+          width: 92%;
+          text-align: left;
+          font-weight: 400;
+          border: 1px solid #e8e8e8;
+          box-shadow: 2px 2px 8px rgba(163, 163, 163, 0.25);
+          border-radius: 4px;
+
+          .infoFonts {
+            color: #565656;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 0.95em;
+            color: #565656;
+          }
+        }
+
+        p {
+          margin: 8px;
+          color: #565656;
+          font-weight: 400;
+
+          span {
+            font-weight: 500;
+          }
+        }
+
+        select {
+          padding: 4px;
+          margin: 4px;
+          outline: none;
+          border: solid 1px #dadada;
+          border-radius: 10px;
+          background-color: #f8f8f8;
+        }
+
+        .modifyButton {
+          color: $bgColor;
+          background-color: #8bb9cc;
+          border: none;
+          border-radius: 10px;
+          padding: 12px 22px;
+          margin: 0 14px 14px 14px;
+          transition: 150ms;
+
+          &:hover {
+            cursor: pointer;
+            background-color: #b2cbd6;
+          }
+        }
+
+        .deauthButton {
+          position: absolute;
+          bottom: 0;
+          margin: 18px;
+          border: none;
+          background: rgb(197, 106, 106);
+          font-weight: 700;
+          color: $bgColor;
+          padding: 4px 12px;
+          border-radius: 10px;
+          transition: 100ms;
+
+          &:hover {
+            cursor: pointer;
+            background-color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pinkColor {
+  color: $cptsPink;
+}

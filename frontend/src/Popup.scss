@@ -1,0 +1,168 @@
+$bgColor: #f6f6f6;
+$secondaryColor: #fbfbfb;
+$tiercaryColor: #f1f1f1;
+
+$mainFontColor: #8d8d8d;
+$secondaryFontColor: #606060;
+$tiercaryFontColor: #565656;
+
+$cptsPink: #ff00a8;
+$cptsYellow: #f8e57c;
+$cptsOrange: #efad65;
+$cptsGreen: #68d065;
+$cptsBlue: #66bad9;
+
+$mainBoxShadow: 0px 0px 10px 1px rgba(163, 163, 163, 0.25);
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(123, 123, 123, 0.75);
+  z-index: 50;
+
+  .popupCard {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 12px 64px;
+    background-color: $secondaryColor;
+    box-shadow: 0px 0px 10px 1px rgba(163, 163, 163, 0.25);
+    border-radius: 10px;
+
+    .popupForm {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 500;
+      color: $tiercaryFontColor;
+      margin-bottom: 12px;
+    }
+
+    .closeButton {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      text-decoration: none;
+      color: $tiercaryFontColor;
+    }
+
+    .stylingBar {
+      background-color: #32a1bf;
+      height: 2px;
+      width: 90%;
+    }
+
+    form {
+      position: relative;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: fit-content;
+      height: auto;
+      margin: none;
+      padding: none;
+
+      input {
+        margin: 20px 0;
+        width: 100%;
+        resize: none;
+        border: 1px solid #dadada;
+        box-shadow: $mainBoxShadow;
+        border-radius: 10px;
+        background-color: $tiercaryColor;
+        padding: 12px 24px;
+
+        &:focus {
+          outline: 1px solid #c9c7c7;
+          background-color: $tiercaryColor;
+        }
+      }
+      .admin-delete-image {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        p {
+          margin: 0.5em;
+          width: 100%;
+          display: contents;
+        }
+        select {
+          margin: 0.5em;
+          height: auto;
+        }
+        button {
+          margin: 0.5em;
+          width: auto;
+          border: none;
+          cursor: pointer;
+          background: #8bb9cc;
+          color: $secondaryColor;
+          border-radius: 10px;
+          padding: 0.3em;
+        }
+      }
+      .buttonDelete {
+        top: 0px;
+        right: 0px;
+        position: absolute;
+        border: none;
+        filter: saturate(50%);
+        transition: 150ms;
+        background: none;
+
+        &:hover {
+          cursor: pointer;
+          filter: saturate(100%);
+        }
+      }
+
+      p {
+        width: 100%;
+        text-align: left;
+      }
+
+      textarea {
+        margin: 20px 0;
+        resize: none;
+        border: 1px solid #dadada;
+        box-shadow: $mainBoxShadow;
+        border-radius: 10px;
+        background-color: $tiercaryColor;
+        padding: 12px 12px 0 12px;
+
+        &:focus {
+          outline: 1px solid #c9c7c7;
+          background-color: $tiercaryColor;
+        }
+      }
+
+      .submitButton {
+        background: #8bb9cc;
+        box-shadow: $mainBoxShadow;
+        border: none;
+        padding: 14px 64px;
+        border-radius: 10px;
+        margin: 12px 32px;
+        color: $secondaryColor;
+        font-size: 1.4em;
+        transition: 150ms;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #b2cbd6;
+        }
+      }
+    }
+  }
+}

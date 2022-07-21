@@ -20,9 +20,15 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^5.2.0",
+    "cors": "^2.8.5",
     "dockerfile": "^0.1.1",
+    "joi": "^17.6.0",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
-    "react-icon": "^1.0.0"
+    "react-dom": "^18.2.0",
+    "react-icon": "^1.0.0",
+    "yup": "^0.32.11"
   }
 }
